@@ -1,0 +1,13 @@
+.jumbotron{
+    background-color: #FFEFD5;
+    text-align: center;
+}
+
+body{
+    background-color: #FFDEAD;
+}
+
+.description{
+    margin: 35px;
+    padding: 10px;
+}

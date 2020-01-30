@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Favorite Program</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="favorite-program.css" type="text/css">
+</head>
+
+<body class="m-3">
+
+    <div class="jumbotron">
+        <h1>C# Matching Game</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-md-5">
+            <div>
+                <p class="description">This C# program is a timed matching game with varying difficulty levels. It takes your time, multiplies it by a static number
+                    to add a score to the database.  The tricky part to this program is that for each round, the pairs are randomized.  The card images are stored in a list
+                    and some extensive logic is involved to not only pull a pair from the list, but to make sure that same pair is not pulled a second time.
+                </p>
+            </div>
+        </div>
+        <div class="col-md-7">
+            <div>
+                <p class="code"><pre><code>
+                    private void RandomImages()
+                    {
+                        int num; //Instantiate empty integer value
+                        int[] cardNum = Enumerable.Repeat(-1, 8).ToArray(); //Create array of 8 values
+
+                        for (int i = 0; i < cards.Length / 2; i++)
+                        {
+                            num = random.Next(0, card.Count()); //Generate random number
+
+                            //Generate new number if number is containted in array
+                            while (cardNum.Contains(num) == true)
+                            {
+                                num = random.Next(0, card.Count());
+                            }
+
+                        cardNum[i] = num; //Add number to array
+
+                        FreeSpot().Tag = card[num]; //Add card image at index to free card
+                        FreeSpot().Tag = card[num]; //Add image again to create a pair
+                        }
+                    }
+                </code></pre></p>
+            </div>
+        </div>
+    </div>
+</body>
